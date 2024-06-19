@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 
+// TODO 连接 mongo
+
 // 创建express应用
 const app = express();
 
