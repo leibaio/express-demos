@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const MONGO_URI = 'mongodb://localhost:27017/test';
+const MONGO_URI = 'mongodb://localhost:27017/reactDemos';
 
 const connectDB = async () => {
   try {
