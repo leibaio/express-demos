@@ -5,6 +5,7 @@ import User from '../models/user';
 
 const router = express.Router();
 const SECRET_KEY = '这里替换为你的密钥';
+const saltRounds = 10;
 
 // 注册
 router.post('/register', async (req, res) => {
@@ -38,6 +39,7 @@ router.post('/register', async (req, res) => {
 
 // 登录
 router.post('/login', async (req, res) => {
+  console.log('[ req.body ] >', req.body)
   const { email, password } = req.body;
 
   try {

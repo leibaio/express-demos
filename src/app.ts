@@ -13,6 +13,7 @@ app.use(cors({
 // 连接到数据库
 connectDB();
 
+app.use(express.json());
 // 使用路由
 app.use('/api', userRoutes);
 
