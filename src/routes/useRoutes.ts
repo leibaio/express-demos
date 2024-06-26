@@ -18,7 +18,7 @@ router.post('/register', async (req, res) => {
   }
 
   // 加密密码
-  const hashedPassword = await bcrypt.hash(password, 10);
+  const hashedPassword = await bcrypt.hash(password, saltRounds);
 
   try {
     // 创建新用户
