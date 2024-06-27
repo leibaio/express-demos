@@ -46,21 +46,21 @@ router.post('/login', async (req, res) => {
     // 检查用户是否存在
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(404).json({ error: 'User not found' });
+      return res.status(404).json({ message: 'User not found' });
     }
 
     // 比较密码
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(400).json({ error: 'Invalid credentials' });
+      return res.status(400).json({ message: 'Invalid credentials' });
     }
 
     // 生成JWT
     const token = jwt.sign({ userId: user._id }, SECRET_KEY, { expiresIn: '1h' });
 
-    res.json({ token });
+    res.json({ token, message: 'success' });
   } catch (error) {
-    res.status(500).json({ error: 'Error logging in' });
+    res.status(500).json({ message: 'Error logging in' });
   }
 });
 

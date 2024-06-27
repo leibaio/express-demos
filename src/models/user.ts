@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   age: Number,
   sex: String,
+  role: String
   // 更多字段...
 });
 
